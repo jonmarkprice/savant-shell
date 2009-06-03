@@ -46,6 +46,11 @@ def p_start_move(p):
 	'start : moveItem' 
 	p[0] = p[1]
 
+def p_start_zip(p):
+	'start : zipItem'
+	p[0] = p[1]
+
+
 def p_start_sort(p):
 	'start : sortItem' 
 	p[0] = p[1]
@@ -107,6 +112,11 @@ def p_moveItem_query(p):
 	os.system('mv ' + p[2] + ' ' + p[4])
 	p[0] = ""
 
+
+def p_zipItem_query(p):
+	'zipItem : ZIP query TO NAME'
+	os.system('zip -r ' + p[4] + ' ' + p[2])
+	p[0] = ""
 
 
 # Sort Rules

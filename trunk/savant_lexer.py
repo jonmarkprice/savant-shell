@@ -10,6 +10,7 @@ reserved = {
 'delete' : 'DELETE',
 'show' : 'SHOW',
 'copy' : 'COPY',
+'zip' : 'ZIP',
 'to' : 'TO',
 'move' : 'MOVE',
 'sort' : 'SORT',
