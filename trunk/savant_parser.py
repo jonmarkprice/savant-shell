@@ -20,6 +20,11 @@ if len(sys.argv) >= 2:
 		currentDir = os.getcwd()
 		print "invalid path: defaulting to: " + currentDir
 
+	selection = ""
+	if len(sys.argv) >= 3:
+		selection = sys.argv[2:]
+		print selection
+
 else:
 	currentDir = os.getcwd()
 	print "no path provided: defaulting to: " + currentDir
@@ -135,7 +140,13 @@ def p_sortItem_type(p):
 
 
 
+def p_query_this(p):
+	'query : THIS'
+	p[0] = " ".join(selection)
+
+
 # Query Combination Rules
+
 
 def p_query_query(p):
 	'query : query query'

@@ -4,6 +4,7 @@ import sys
 # mapping of reserved words to tokens
 
 reserved = {
+'this' : 'THIS',
 'new' : 'NEW',
 'folder' : 'FOLDER',
 'file' : 'FILE',
