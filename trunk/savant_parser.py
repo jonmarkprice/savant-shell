@@ -64,6 +64,10 @@ def p_start_delete(p):
 	'start : deleteItem' 
 	p[0] = p[1]
 
+def p_start_gotoItem(p):
+	'start : gotoItem'
+	p[0] = p[1]
+
 # New File/Folder Rules
 
 def p_newItem_file(p):
@@ -90,7 +94,7 @@ def p_deleteItem_query(p):
 
 def p_showItem_query(p):
 	'showItem : SHOW query'
-	p[0] = p[2]
+	p[0] = "\n".join(p[2].split(' '))
 
 
 # Copy Rules
@@ -102,9 +106,10 @@ def p_copyItem_folder(p):
 	p[0] = ""
 
 def p_copyItem_query(p):
-	'copyItem : COPY query TO NAME'
+	'copyItem : COPY query TO targetItem'
 	os.system('cp -r ' + p[2] + ' ' + p[4])	
 	p[0] = ""
+
 
 def p_moveItem_folder(p):
 	'moveItem : MOVE query TO newItem'
@@ -113,7 +118,7 @@ def p_moveItem_folder(p):
 
 
 def p_moveItem_query(p):
-	'moveItem : MOVE query TO NAME'
+	'moveItem : MOVE query TO targetItem'
 	os.system('mv ' + p[2] + ' ' + p[4])
 	p[0] = ""
 
@@ -139,10 +144,21 @@ def p_sortItem_type(p):
 	p[0] = "\n".join(sorted((os.listdir(currentDir)), (lambda a, b : cmp(os.path.splitext(a)[1] , os.path.splitext(b)[1])) ) )
 
 
+def p_gotoItem_targetItem(p):
+	'gotoItem : GOTO targetItem'
+	global currentDir
+	currentDir = p[2]
+	os.chdir(currentDir)
+	p[0] = ""
 
-def p_query_this(p):
-	'query : THIS'
-	p[0] = " ".join(selection)
+
+def p_targetItem_up(p):
+	'targetItem : UP'
+	p[0] = (os.path.dirname(currentDir) + "/")
+
+def p_targetitem_folder(p):
+	'targetItem : NAME'
+	p[0] = p[1] # check if it is folder or shortcut	
 
 
 # Query Combination Rules
@@ -172,7 +188,19 @@ def p_query_or_query(p):
 	p[0] = " ".join(result)
 	
 
+def p_query_this(p):
+	'query : THIS'
+	p[0] = " ".join(selection)
 
+
+def p_query_all(p):
+	'query : ALL'
+	print currentDir
+	p[0] = " ".join(sorted(os.listdir(currentDir)))
+
+def p_query_allfiles(p):
+	'query : ALL FILES'
+	p[0] = " ".join(sorted(os.listdir(currentDir)))
 
 
 def p_query_filetype(p):
