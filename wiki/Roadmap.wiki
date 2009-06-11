@@ -1,5 +1,5 @@
 #summary Roadmap for upcoming versions
-#labels Phase-Requirements
+#labels Phase-Requirements,Featured
 
 = Roadmap =
 
