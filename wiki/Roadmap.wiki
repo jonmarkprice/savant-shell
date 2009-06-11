@@ -1,0 +1,25 @@
+#summary Roadmap for upcoming versions
+#labels Phase-Requirements
+
+= Roadmap =
+
+== Savant 0.9 ==
+  * [http://beagle-project.org/Main_Page Beagle] integration
+    * Using Beagle Python API to perform content based queries.
+    * Extend scope of queries to everything that Beagle can index.
+  * Java/Swing Front-end
+    * Syntax auto-completion based on command.
+    * Extended panel to view query results with different types of rendering.
+
+== Savant 1.0 ==
+  * Extensibility Support
+    * Externalizing grammar rules to allow adding new rules without changing the lexer and the parser.
+    * Make a handful of result renderers available to grammar extensions.
+    * Use a more structured format of passing parsing results to the GUI to allow flexibility in rendering.
+
+== Savant 2.0 ==
+  * Advanced Extensibility
+    * Implement the front-end on an RIA platform (e.g. Adobe AIR, Titanium, JavaFX).
+    * Port existing result renderers to RIA supported scripting language.
+    * Make parsing result format JSON-compliant.
+    * Allow custom result renderers to be added alongside grammar extensions.
