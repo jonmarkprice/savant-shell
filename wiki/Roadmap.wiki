@@ -4,6 +4,9 @@
 = Roadmap =
 
 == Savant 0.9 ==
+  * Savant Server Implementation
+    * Develop a single threaded server to communicate with the front-end.
+    * Ensure message passing is JSON/REST compliant.
   * [http://beagle-project.org/Main_Page Beagle] integration
     * Using Beagle Python API to perform content based queries.
     * Extend scope of queries to everything that Beagle can index.
@@ -20,7 +23,6 @@
 == Savant 2.0 ==
   * Advanced Extensibility
     * Implement the front-end on an RIA platform (e.g. Adobe AIR, Titanium, JavaFX).
-    * Implement the back-end as a server and support common HTML protocols.
     * Port existing result renderers to RIA supported scripting language.
-    * Make parsing result format JSON-compliant.
+    * Make parsing result format JSON/REST-compliant.
     * Allow custom result renderers to be added alongside grammar extensions.
