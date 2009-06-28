@@ -18,7 +18,7 @@
   *  Web Services Integration
     * Add rules to poll results from popular web services like Facebook, Google Calendar, Flickr etc.
     * Add rules to push/pipe user data to these web-services.
-  * `[Optional`][http://beagle-project.org/Main_Page Beagle] integration
+  * `[Optional]` [http://beagle-project.org/Main_Page Beagle] integration
     * Using Beagle Python API to perform content based queries.
     * Extend scope of queries to everything that Beagle can index.
 
