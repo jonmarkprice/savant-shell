@@ -7,18 +7,20 @@
   * Savant Server Implementation
     * Develop a single threaded server to communicate with the front-end.
     * Ensure message passing is JSON/REST compliant.
-  * [http://beagle-project.org/Main_Page Beagle] integration
-    * Using Beagle Python API to perform content based queries.
-    * Extend scope of queries to everything that Beagle can index.
+  * Extensibility Support
+    * Externalizing grammar rules to allow adding new rules without changing the lexer and the parser.
+    * Make a handful of result renderers available to grammar extensions.
   * Java/Swing Front-end
     * Syntax auto-completion based on command.
     * Extended panel to view query results with different types of rendering.
 
 == Savant 1.0 ==
-  * Extensibility Support
-    * Externalizing grammar rules to allow adding new rules without changing the lexer and the parser.
-    * Make a handful of result renderers available to grammar extensions.
-    * Use a more structured format of passing parsing results to the GUI to allow flexibility in rendering.
+  *  Web Services Integration
+    * Add rules to poll results from popular web services like Facebook, Google Calendar, Flickr etc.
+    * Add rules to push/pipe user data to these web-services.
+  * `[Optional`][http://beagle-project.org/Main_Page Beagle] integration
+    * Using Beagle Python API to perform content based queries.
+    * Extend scope of queries to everything that Beagle can index.
 
 == Savant 2.0 ==
   * Advanced Extensibility
