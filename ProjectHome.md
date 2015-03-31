@@ -1,0 +1,3 @@
+Savant is a natural language wrapper around the operating system shell. It is of no doubt that the terminal is a great productivity tool. But its learning curve is too steep to attract the average Joe. Savant works around this problem by providing natural language like syntax for most common file operations.
+
+Savant is written in Python and uses Yacc to parse user input. The current version works from the command line. The ultimate aim is to integrate it the file manager and have it activate as a text-box like Ubiquity or Quicksilver.
